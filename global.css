@@ -1,0 +1,181 @@
+/* reset */
+#nytint-content h1,#nytint-content h2,#nytint-content h3,#nytint-content h4,#nytint-content h5,#nytint-content h6,#nytint-content p,#nytint-content ul,#nytint-content li,#nytint-content ol,#nytint-content dl,#nytint-content dt,#nytint-content dd,#nytint-content th,#nytint-content td { margin: 0; padding: 0; }
+#nytint-content table{ border-spacing: 0; }
+
+/* represent */
+#nytint-content {
+  height: 400px;
+  height: auto !important;
+  min-height: 400px;
+  margin: 0;
+  font-family: arial,verdana,sans-serif; }
+
+#nytint-content .ss { font-family: arial,verdana,sans-serif; }
+#nytint-content .s	{ font-family: georgia,times,serif; }
+
+#nytint-content a {
+  text-decoration: none; }
+#nytint-content a:hover {
+  text-decoration: underline; }
+#nytint-content a:hover span {
+  text-decoration: underline; }
+
+#nytint-credit {
+	font-size:0.9em;
+	color: #999999;
+	padding-right: 10px;
+	margin-bottom: 10px;
+	text-align: right;
+	font-family: arial,verdana,sans-serif;
+}
+
+/* ---------------------------------------------------- sharetools */
+#nytint-share{
+	padding: 0;
+	margin: 2px 16px 0 0;
+	list-style: none;
+	display:inline;
+	background-color:#fff;
+}
+#nytint-share ul {
+	padding: 0;
+	margin: 8px 0 0 0;	
+	list-style: none;
+	background-color:#fff;
+}
+#nytint-share a {
+	display: block;
+	width: 5em;
+	color: #333;
+	text-decoration:none;
+	font-family:Arial,Helvetica,sans-serif;	
+	font-size:10px;	
+	text-transform:uppercase;
+	text-align:center;
+}
+#nytint-share a#share-button{
+	background:transparent url(http://graphics8.nytimes.com/packages/images/elections/2008/results/img/gutter.gif) no-repeat scroll -6px -844px;
+	position:absolute;
+	z-index:999;		
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+	border-top:1px solid #fff;				
+}	
+#nytint-share #sharetools{
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+}
+.ie6 #nytint-share li#emailtools{
+	padding-left:20px;
+}
+.ie7 #nytint-share li#emailtools{
+	padding-left:26px;	
+}
+#nytint-share li#emailtools a{
+	padding-top:7px;
+	padding-bottom:0 !important;
+	background: #fff url(http://graphics8.nytimes.com/packages/images/elections/2008/results/img/gutter.gif) no-repeat scroll -5px -719px;
+}	
+
+#nytint-share a:hover{
+	text-decoration:underline;
+}
+#nytint-share li#sharetools:hover,#nytint-share li#sharetools.nytint-hover{
+/*	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+*/
+}	
+#nytint-share li:hover #share-button,#nytint-share li.nytint-hover #share-button{
+	background:#FFFFFF url(http://graphics8.nytimes.com/packages/images/elections/2008/results/img/gutter.gif) no-repeat scroll -6px -903px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-top:1px solid #ccc;			
+}
+
+#nytint-share li {
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+	border-top:1px solid #fff;		
+	float: left;
+	display:inline !important;
+	width: 5em;
+	margin-left:20px;
+}	
+.ie6 #nytint-share li{
+	margin-left:17px;
+}
+#nytint-share li:hover li,#nytint-share li.nytint-hover li{	
+	border-left:none;
+	border-right:none;
+	border-top:none;
+	margin-left:0;
+}
+#nytint-share li a{
+	border:none;
+	font-size:9px;
+	margin:0pt;
+	padding:6px 0pt 4px 15px;	
+}	
+
+#nytint-share li li a{
+	padding-left:23px;		
+	text-align:left;
+}
+#nytint-share li.linkedin{
+	border-top:1px solid #ddd;
+}	
+#nytint-share li.linkedin a{
+	padding-top:10px;
+	background:#fff url(http://graphics8.nytimes.com/images/article/functions/linkedin.gif) no-repeat scroll 0pt 8px;
+}	
+#nytint-share li.digg a{
+	background:#fff url(http://graphics8.nytimes.com/images/article/functions/digg.gif) no-repeat scroll 0pt 3px;
+}
+#nytint-share li.facebook a{
+	background:#fff url(http://graphics8.nytimes.com/images/article/functions/facebook.gif) no-repeat scroll 0pt 4px;
+}
+#nytint-share li.mixx a{
+	background:#fff url(http://graphics8.nytimes.com/images/article/functions/mixx.gif) no-repeat scroll 0pt 4px;
+}
+#nytint-share li.yahoobuzz a{
+	background:#fff url(http://graphics8.nytimes.com/images/article/functions/yahoobuzz.gif) no-repeat scroll 0pt 2px;
+}					
+#nytint-share li ul {
+	position: absolute;
+	width: 9em;
+	left: -999em;
+	border:1px solid #ccc;
+	border-top:1px solid #ccc;		
+	padding-bottom:2px;
+	padding-top:0 !important;
+	margin-top:21px;
+	background:#fff;
+	z-index:103;
+}
+#nytint-share li ul li{
+	padding-left:6px;
+	border:none !important;
+}	
+
+#nytint-share li:hover ul, #nytint-share li.nytint-hover ul {
+	left: auto;
+/*	margin-left:-1px;*/
+	position:absolute;
+
+}	
+#nytint-share li:hover, #nytint-share li.nytint-hover{
+	border-bottom:1px solid #fff;
+}
+#nytint-share li#feedback:hover, #nytint-share li#feedback.nytint-hover{
+	border-bottom: none;
+}
+span#LTS_recommend_button a.dyn_recommend_button{
+	font-size:9px !important;
+}
+
+.icon_feedback {
+background:transparent url(http://graphics8.nytimes.com/packages/images/elections/2008/img/gutter.gif) no-repeat scroll -10px -783px;
+}
+.ie6 #send-feedback-button { height: 10px !imporant; overflow: hidden !important; }
+#nytint-share #send-feedback-button { width:6em;padding-top:7px; }
+/* ---------------------------------------------------- sharetools */

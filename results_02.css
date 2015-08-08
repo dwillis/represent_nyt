@@ -1,0 +1,226 @@
+#nytint-representatives a { text-decoration: none; }
+#nytint-representatives a:hover { text-decoration: underline; }
+#nytint-feed a { text-decoration: none; }
+#nytint-feed a:hover { text-decoration: underline; }
+#nytint-cola a.change { margin-left: 4px; }
+
+#nytint-content { padding: 20px 20px 60px; }
+#nytint-content #nytint-nav { background-color: #f0f4f5; border-style: solid; border-color: #ccc; padding: 10px; border-width: 1px 0; }
+#nytint-content #nytint-nav ul { list-style: none; float: left; margin-top: 6px; }
+#nytint-content #nytint-nav li { margin: 0 0 0 0; padding: 0 0 0 0; display: inline; float: left; padding: 0 10px; border-right: 1px solid #ccc; }
+#nytint-content #nytint-nav li strong a { color: #333; font-weight: bold; }
+#nytint-content #nytint-nav li strong a:hover { font-weight: bold; text-decoration: none; }
+#nytint-content #nytint-nav li a { margin: 0; padding: 0; font-size: 1.2em; }
+#nytint-content #nytint-nav li a:hover { text-decoration: underline; }
+#nytint-content #nytint-nav li.nytint-first { padding-left: 0; }
+#nytint-content #nytint-nav li.nytint-last { padding-right: 0; border-right: none; }
+#nytint-content #nytint-cola #nytint-representatives {  }
+#nytint-content #nytint-feed span.nytint-rss-feed { display: block; font-size:1.1em; padding-top:6px; float: right; background-image: url(http://graphics8.nytimes.com/packages/css/nytint/projects/represent/feed-icon-14x14.png); background-repeat: no-repeat; background-position:0 2px; margin-right:20px; padding: 4px 0 0 0; }
+#nytint-content #nytint-feed span.nytint-rss-feed a { cursor: pointer; z-index: 1; padding-left: 18px; }
+#nytint-content #nytint-feed span.nytint-rss-feed a:hover { text-decoration: underline; cursor: pointer; }
+
+#nytint-content .nytint-votes-data { width: 74px; height: 37px; overflow: hidden; white-space: nowrap; margin-left: 8px; line-height: 1; border: 1px solid #ccc; font-size: 0.88em; }
+#nytint-content .nytint-votes-data-container { float: right; }
+#nytint-content .nytint-votes-data-container a.nytint-votes-link { position: absolute; z-index: 1; margin-left: 8px; padding-right:73px; padding-top:21px; text-decoration: none; }
+#nytint-content .nytint-votes-data-container a:focus { outline: none; }
+#nytint-content .nytint-votes-data-container a:active { outline: none; }
+#nytint-content .nytint-votes-yes { width: 37px; height: 37px; float: left; text-align: center; }
+#nytint-content .nytint-votes-no { width: 37px; height: 37px; float: left; text-align: center; }
+#nytint-content .nytint-winner { background-color: #F0F4F5; color: #000; font-weight: bold; }
+#nytint-content .nytint-votes-data-container h6 { background-color: transparent; font-size:0.95em; font-weight:normal; margin-left:8px; text-align:center; }
+#nytint-content .nytint-votes-data strong { font-weight: normal; font-style: normal; background-color: transparent; display: block; margin: 6px 0 4px 0; }
+#nytint-content .nytint-votes-data em { background-color: transparent; display: block; font-style: normal; font-weight: normal; }
+
+#nytint-content .nytint-votes-data .nytint-winner strong { font-weight: bold; }
+#nytint-content .nytint-votes-data .nytint-winner em { font-weight: bold; }
+
+#nytint-header h2#nytint-logo { float:left; position: relative; }
+#nytint-header { border-bottom:1px solid #CCCCCC; text-align: left; height:25px; position: relative; }
+#nytint-header #nytint-share { float: right; }
+
+#nytint-colab { margin-top: 20px; }
+#nytint-cola { float: left; width: 600px; margin-top:21px; }
+#nytint-colb { float: left; border-left:1px solid #FFFFFF; margin-left:9px; margin-top:0px; padding-left:9px; }
+
+#nytint-content span.nytint-location {
+	display: block;
+	float: none;
+	position: absolute;
+	top: 28px;
+	left: 0px;
+}
+#nytint-content span.nytint-location a {
+	float:left;
+	margin: 2px 0 0 6px;
+}
+
+#nytint-content h3#nytint-location { font-size:1.3em; font-weight:normal; letter-spacing:0.001em; margin:0; padding:0 0 0 0px; color: #333; cursor: select; padding-bottom: 3px; float: left; }
+
+#nytint-representatives { margin-top: 0px; }
+#nytint-representatives th { font-size:1.1em; background-color: #f0f4f5; padding: 6px 0; color: #000; border-top: 1px solid #ccc; border-width: 1px 0 0 0; }
+#nytint-representatives td { font-size:1.1em; border-bottom: none; padding: 6px 0 0 10px; }
+#nytint-representatives #nytint-where { width: 190px; padding-left: 10px; }
+#nytint-representatives #nytint-who { width: 190px; padding-left: 10px; }
+#nytint-representatives #nytint-what { width: 190px; padding-left: 10px; }
+
+#nytint-feed { margin-top: 20px; }
+#nytint-content #nytint-feed h3 { font-size:1.1em; text-transform: uppercase; color: #000; border-bottom:1px solid #cccccc; padding-bottom: 8px; background: none; width: auto; text-indent: 0; margin-right: 0; height: auto; }
+
+#nytint-content #nytint-tabs li {
+	background-color: #f0f4f5;
+	font-size:1.1em;
+	text-transform: uppercase;
+	color: #000;
+	font-weight: bold;
+	display: block;
+	padding: 5px 8px 4px;
+	float: left;
+	border: 1px solid #ccc; }
+#nytint-content #nytint-tabs li.nytint-selected {
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+	z-index: 1; }
+#nytint-content #nytint-tabs li.nytint-first {
+	border-right: none; }
+#nytint-content #nytint-tabs li a {
+	font-weight: normal;
+	display: block;
+	color: #333; }
+#nytint-content #nytint-tabs li a.nytint-selected {
+	font-weight: bold; }
+#nytint-content #nytint-tabs li a.nytint-first {
+	 }
+#nytint-content #nytint-tabs { }
+#nytint-content span.nytint-hr {
+	display: block;
+	font-size: 1px;
+	border-bottom: 1px solid #ccc;
+	margin-top: -1px; }
+
+#nytint-feed dl { }
+#nytint-feed dt { position: relative; font-size: 1.1em; color: #666; margin-top:12px;  }
+#nytint-feed dt.nytint-first { }
+#nytint-feed dt span { position: absolute; top: 3px; display: block; width: 76px; text-align: right; background-color: #fff; }
+#nytint-feed dd {
+	margin: 0;
+	padding: 12px 20px 0 100px;
+	font-family: georgia,times,serif;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 89px 17px;
+	}
+#nytint-feed dd strong { background-color:#fff; font-weight:normal;	min-width:0; }
+#nytint-feed dd a { }
+#nytint-feed dd.image-padding { }
+#nytint-feed dd img { margin-left: 8px; width: 55px; height: 55px; float:right; }
+#nytint-feed dd img.nytint-thumb { margin-left: 8px; width: 55px; height: 55px; float:right; }
+#nytint-feed dd img.nytint-icon { height:14px; margin:0 0 -2px 4px; width:14px; float: none; }
+#nytint-feed dd.nytint-last { padding-bottom: 12px; border-bottom: 1px solid #ccc; }
+#nytint-feed dd.nytint-first { padding-top: 0; background-position: 89px 0.5em; }
+/*
+#nytint-feed dd.post {
+	background-position: 79px -74px;
+	}
+	#nytint-feed dd.story {
+		background-position: 79px 3px;
+		}
+		#nytint-feed dd.vote {
+			background-position: 79px -155px;
+			}*/
+
+/* official */
+#nytint-content .nytint-map-container {
+	margin-bottom: 20px;
+	position: relative; }
+	#nytint-content .nytint-map-container .nytint-map {
+		width:309px;
+		height:270px;
+		border-color: #F0F4F5;
+		border-style: solid;
+		border-width: 0px;
+		position: relative;
+		overflow: hidden;
+		z-index:-1; }
+
+/* colb */
+#nytint-content #nytint-colb span.nytint-caption-container {
+	width: 310px;
+	height: 40px;
+	background-color:#f0f4f5;
+	position:absolute;
+	top: 0;
+	left:1px;
+	/* for IE */
+	filter:alpha(opacity=60);
+	/* CSS3 standard */
+	opacity:0.6;
+	display: block;
+}
+#nytint-content #nytint-colb span.nytint-caption {
+	position: absolute;
+	top:0;
+	left:0;
+	color:#666;
+	font-size:1.6em;
+	padding: 10px;
+	font-weight: bold;
+}
+#nytint-content #nytint-colb h3 {
+	color: #000;
+	border-bottom: 1px solid #ccc;
+	font-size: 1.1em;
+	padding-bottom: 8px;
+	text-transform: uppercase;
+}
+
+#nytint-content #nytint-represent-search { float: right; width: auto; }
+#nytint-content #nytint-represent-search #nytint-q {
+background-color:#FCFCFC;
+border-color:#aaa;
+border-style:solid;
+border-width:1px;
+display:inline;
+float:left;
+margin-right:5px;
+padding: 5px 4px;
+width:191px;
+color:#333333;
+}
+#nytint-content #nytint-global-submit {
+	margin-top: 4px;
+}
+#nytint-content #nytint-boundary-notice {
+	background-color:#ffffef;
+	border:1px solid #CCCCCC;
+	color:#333;
+	font-size:1.1em;
+	line-height:1em;
+	margin:0 0 10px;
+	padding:10px;
+}
+#nytint-content #nytint-boundary-notice span.nytint-boundary-note {
+	font-size: 1px;
+	z-index: 9;
+	background-color: #fff;
+	background-image: url(http://graphics8.nytimes.com/packages/images/represent/represent-close-notice.png);
+	background-position: 0 0;
+	float: right;
+	display: inline;
+	width: 13px;
+	height: 13px;
+	cursor: pointer;
+}
+#nytint-content #nytint-nerdbox {
+	background-color: #fff;
+	border-top: 1px solid #CCCCCC;
+	width: 309px;
+	padding: 12px 0 0 0;
+}
+#nytint-content #nytint-nerdbox p {
+	color:#333333;
+	font-size:1.2em;
+	line-height:1.4em;
+	margin:0 0 12px 0;
+}

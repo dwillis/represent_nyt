@@ -1,0 +1,25 @@
+{% extends "nytimes.html" %}
+
+{% block article %}
+	
+	<div id="nytint-header" class="clearfix">
+		{% include "sharetools.html" %}
+		<h2 id="nytint-logo">
+			<img src="http://graphics8.nytimes.com/packages/images/represent/represent-logo-2.png" alt="Represent" /><img style="padding: 0pt; position: absolute; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0pt; left: 141px; top: -2px;" src="http://graphics8.nytimes.com/packages/images/represent/beta-represent-logo-sm.png" alt="Beta" />
+		</h2>
+		<span class="nytint-location clearfix">
+		<h3 id="nytint-location" class="s">{{ location }}</h3><a href="/represent/logout">(change address)</a>
+		</span>
+	</div>
+	
+	<div id="nytint-colab" class="clearfix">
+	    <div id="nytint-cola">
+	    {% block content %}{% endblock content %}
+	    </div>
+    
+	    <div id="nytint-colb" class="clearfix">
+	    {% block sidebar %}{% endblock sidebar %}
+	    </div>
+	</div>
+
+{% endblock article %}

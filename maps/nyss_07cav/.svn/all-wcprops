@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav
+END
+nyss_metadata.html
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav/nyss_metadata.html
+END
+nyss.shp.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav/nyss.shp.xml
+END
+nyss.shp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav/nyss.shp
+END
+nyss.dbf
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav/nyss.dbf
+END
+nyss.prj
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav/nyss.prj
+END
+nyss.shx
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/django/!svn/ver/1/trunk/maps/nyss_07cav/nyss.shx
+END

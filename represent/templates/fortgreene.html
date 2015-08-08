@@ -1,0 +1,19 @@
+{% load humanize %}document.write('<div class="entry">');
+{% for date, events in dates %}document.write('<span class="date">{{ date|humanize_date }}</span>');
+{% for event in events %}document.write('<p>{{ event.my_officials|humanize_your_official_list_without_links|sentence }}{% autoescape off %}{{ event.text }}{% endautoescape %}</p>');{% endfor %}{% endfor %}
+document.write('</div>');
+
+<!--
+<div class="entry">
+<span class="date">Date Stamp</span>
+<p>State Assemblyman <strong>Hakeem S. Jeffries</strong> appeared in the article:</p>
+<h6 class="kicker">New York Post</h6>
+<h5><a href="#" title="">Bloomberg Makes Early, Aggressive Bid for Black Support</a></h5>
+</div>
+
+<div class="entry">
+<span class="date">Date Stamp</span>
+<p>State Assemblyman <strong>Hakeem S. Jeffries</strong> appeared in the article:</p>
+<h5><a href="#" title="">Bloomberg Makes Early, Aggressive Bid for Black Support</a></h5>
+</div>
+-->

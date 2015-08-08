@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+{% load humanize %}
+<rss version="2.0">
+  <channel>
+    <title>Represent - NYTimes.com</title>
+    <link>{{ url }}</link>
+    <description>Represent results for {{ location }}</description>
+    <copyright>Copyright 2008 The New York Times Company</copyright>
+    <webMaster>represent@nytimes.com (New York Times)</webMaster>
+    {% for date, events in dates %}
+      {% for event in events %}
+        <item>
+           <title>{{ event.link_title }}</title>
+           <link>{{ event.url }}</link>
+           <description>{{ event.my_officials|humanize_your_official_list_without_links|striptags|sentence }} {{ event.text }}</description>
+           <pubDate>{{ date|date:"D, d M Y 00:00:00 -0500" }}</pubDate>
+           <guid>{{ event.url }}</guid>
+        </item>
+      {% endfor %}
+    {% endfor %}
+  </channel>
+</rss>

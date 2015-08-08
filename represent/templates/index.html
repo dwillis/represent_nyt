@@ -1,0 +1,66 @@
+{% extends "nytimes.html" %}
+
+{% block css %}
+<link href="http://graphics8.nytimes.com/packages/css/nytint/projects/represent/represent.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock css %}
+
+{% block article %}
+	<div id="nytint-header" class="clearfix">
+		<div id="nytint-sharetools-container">
+		{% include "sharetools.html" %}
+		</div>
+	</div>
+	<h1>
+		<img class="nytint-logo" src="http://graphics8.nytimes.com/packages/images/represent/represent-landing-logo.png" alt="The New York Times - Represent" />
+		<img class="nytint-beta" src="http://graphics8.nytimes.com/packages/images/represent/represent-beta-logo.png" />
+	</h1>
+	<div id="nytint-search">
+		<div id="nytint-search-container" class="clearfix">
+	    	<h2 class="s">Find your elected representatives in New York City.</h2>
+	        <form method="get" action="/represent/" id="nytint-represent-search">
+				<input id="nytint-q" type='text' name='location' size='25' value='Street Address and ZIP code'></input>
+				<input type='image' src="http://graphics8.nytimes.com/packages/images/represent/represent-go-button.png" id="nytint-search-button" value="Go" />
+			</form>
+			<div class="nytint-examples">For example, <a href="/represent/98-Rivington-St-10002/">98 Rivington St 10002</a> or <a href="/represent/3621-Ditmars-Blvd-11105/">36-21 Ditmars Blvd 11105</a></div>
+			
+			{% if error %}
+			<span class="nytint-error">{{ error }}</span>
+			{% endif %}
+		</div>
+	</div>
+	
+	<span class="nytint-shadow clearfix"></span>
+	
+	<div id="nytint-feature-box" class="clearfix">
+		<h3 class="s nytint-feature-head">&nbsp;</h3>
+		<div class="feature-box nytint-first">
+			<h3 class="s">The political districts you live in.</h3>
+			<img src="http://graphics8.nytimes.com/packages/images/nytint/projects/represent/feature-box-1f.png" alt="" />
+		</div>
+		<div class="feature-box">
+			<h3 class="s">Who represents you.</h3>
+			<img src="http://graphics8.nytimes.com/packages/images/nytint/projects/represent/feature-box-2e.png" alt="" />
+		</div>
+		<div class="feature-box">
+			<h3 class="s">And what they're up to.</h3>
+			<img src="http://graphics8.nytimes.com/packages/images/nytint/projects/represent/feature-box-3e.png" alt="" />
+		</div>
+	</div>
+{% endblock article %}
+
+{% block scriptbottom %}
+<script src="http://graphics8.nytimes.com/js/app/lib/prototype/1.6.0.2/prototype.js"></script>
+<script type="text/javascript">
+var NYTD = NYTD || {};
+NYTD.NYTINT = NYTD.NYTINT || {};
+NYTD.NYTINT.Share = NYTD.NYTINT.Share || {};
+NYTD.NYTINT.Hover = NYTD.NYTINT.Hover || {};
+NYTD.NYTINT.pageConfig = { description: "Represent lets New York City readers find out who represents them in local, state and federal offices and assembles a personalized activity feed of what their elected officials are doing." };
+</script>
+<script src="http://graphics8.nytimes.com/packages/js/nytint/projects/represent/represent.js"></script>
+<script>
+new NYTD.NYTINT.DefaultText('nytint-q', 'Street Address and ZIP code');
+NYTD.NYTINT.Hover.init();
+</script>
+{% endblock scriptbottom %}
+

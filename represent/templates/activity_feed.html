@@ -1,0 +1,34 @@
+{% load humanize %}
+<dl>
+	{% for date, events in dates %}
+	<dt class="{% if forloop.first %}nytint-first{% else %}{% endif %}"><span>{{ date|humanize_date }}</span></dt>
+		{% for event in events %}
+		<dd class="{{ event.category }}{% if forloop.first %} nytint-first{% else %}{% endif %}{% if forloop.last %} nytint-last{% else %}{% endif %}{% if event.thumbnail_url %} image-padding{% endif %} clearfix">
+		{% if event.thumbnail_url %}<a href="{{ event.url }}"><img src="{{ event.thumbnail_url }}" class="nytint-thumb" alt="thumbnail" /></a>{% endif %}
+		{% ifequal event.category "vote" %}
+		<div class="nytint-votes-data-container">
+			<h6 class="ss"></h6>
+			<a class="nytint-votes-link" href="{{ event.url }}">
+				<div class="nytint-votes-data ss">
+					<div class="{% if event.vote.is_passed %}nytint-winner {% endif %}nytint-votes-yes">
+						<strong class="nytint-yes">Yes</strong>
+						<em>{{ event.vote.yesvotes }}</em>
+					</div>
+					<div class="{% if not event.vote.is_passed %}nytint-winner {% endif %}nytint-votes-no">
+						<strong class="nytint-no">No</strong>
+						<em>{{ event.vote.novotes }}</em>
+					</div>
+				</div>
+			</a>
+		</div>
+		{% endifequal %}
+		{% if event.bold %}{% endif %}
+		{{ event.my_officials|humanize_your_official_list_without_links|sentence }}
+		{% autoescape off %}
+		{{ event.text }}
+		{% endautoescape %}
+		{% if event.bold %}{% endif %}
+		</dd>
+		{% endfor %}
+	{% endfor %}
+</dl>

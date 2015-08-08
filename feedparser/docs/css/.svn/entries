@@ -1,0 +1,40 @@
+8
+
+dir
+83
+https://dwillis@newsdev.ec2.nytimes.com/svn/django/trunk/feedparser/docs/css
+https://dwillis@newsdev.ec2.nytimes.com/svn/django
+
+
+
+2009-05-15T22:20:24.907186Z
+1
+ascheinkman
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2bc3c926-0f86-48b7-ae65-fcabe708baef
+
+feedparser.css
+file
+
+
+
+
+2009-07-01T20:14:29.000000Z
+ca7f714ca81b24efe97f9d836a2e9feb
+2009-05-15T22:20:24.907186Z
+1
+ascheinkman
+

@@ -1,0 +1,7 @@
+{% for district in map_districts %}
+	<div class="nytint-map-container">
+		<h3>{{ district }}<br />
+		{% ifnotequal district.sort 1 %}{{ district.get_current_official.display_name }}{% endifnotequal %}</h3>
+		<div id="nytint-map-{{ district.id }}" class="nytint-map"></div>
+	</div>
+{% endfor %}

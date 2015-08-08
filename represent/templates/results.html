@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load comparison %}
+
+{% block css %}<link href="http://graphics8.nytimes.com/packages/css/nytint/projects/represent/represent-results.css" media="screen" rel="stylesheet" type="text/css" />{% endblock css %}
+{% block scripthead %}<link rel="alternate" type="application/rss+xml" title="RSS for {{location}}" href="{{ rss_url }}">{% endblock scripthead %}
+{% block content %}
+{% if boundary %}
+<div id="nytint-boundary-container">
+<div id="nytint-boundary-notice">
+	<span class="nytint-boundary-note" onclick="$('nytint-boundary-container').blindUp();"></span>
+Your address is near a border between districts. We've included more than one district for some categories.
+</div>
+</div>
+{% endif %}
+
+<table id="nytint-representatives" cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<th id="nytint-where">You live in&hellip;</th>
+			<th id="nytint-who">represented by&hellip;</th>
+			<th id="nytint-what">as your&hellip;</th>
+		</tr>
+	</thead>
+	<tbody>
+	  {% for community_board in community_boards %}
+		<tr>
+			<td>{{ community_board }}</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		{% endfor %}
+		{% for official in officials %}
+		<tr class="vcard">
+			<td>{{ official.office.get_place }}</td>
+			{% if official.times_topic_url %}
+			  <td><a class="url fn" href="{{ official.times_topic_url }}">{{ official.display_name }}</a></td>
+			{% else %}
+			  <td class="fn">{{ official.display_name }}</td>
+			{% endif %}
+			<td class="org">{{ official.get_long_gender_title }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table> <!--nytint-representatives-->
+
+<div id="nytint-feed">
+	<div id="nytint-feed-header">
+		{% ifequal tab 'activity' %}<span class="nytint-rss-feed"><a href="{{ rss_url }}">RSS</a></span>{% endifequal %}
+		<ul id="nytint-tabs" class="clearfix">
+			<li class="nytint-first {% ifequal tab 'activity' %}nytint-selected{% endifequal %}"><a rel="#nytint-activity-feed" class="nytint-first" href="/represent/{{ location_url }}/activityfeed/">Recent Activity</a></li>
+			<li class="{% ifequal tab 'onthefloor' %}nytint-selected{% endifequal %}"><a rel="#nytint-onthefloor" href="/represent/{{ location_url }}/onthefloor/">On the Floor</a></li>
+			<li class="{% ifequal tab 'aroundtheweb' %}nytint-selected{% endifequal %}"><a rel="#nytint-aroundtheweb" href="/represent/{{ location_url }}/aroundtheweb/">Around the Web</a></li>
+		</ul>
+	</div>
+	<span class="nytint-hr"></span>
+	<div id="nytint-activity-feed"></div>
+	<div id="nytint-onthefloor" style="display:none;"></div>
+	<div id="nytint-aroundtheweb" style="display:none;"></div>
+	<img id="ajax-loader-icon" alt="Loading..." src="http://graphics8.nytimes.com/packages/css/nytint/projects/represent/ajax-loader.gif"/>
+</div> <!--nytint-feed-->
+{% endblock content %}
+
+{% block sidebar %}
+{% include "map_script.html" %}
+<div id="nytint-nerdbox">
+  <p>This application is in beta. We appreciate your <a href="{{ feedback_url }}">feedback</a>.</p>
+  <p>District boundaries are from the New York City Department of City Planning. Blog results provided by <a href="http://www.blogrunner.com">BlogRunner</a>.</p>
+</div>
+{% endblock sidebar %}
+
+{% block scriptbottom %}
+<script src="http://graphics8.nytimes.com/js/app/lib/prototype/1.6.0.2/prototype.js"></script>
+<script src="http://graphics8.nytimes.com/js/app/lib/scriptaculous/1.8.1/scriptaculous.js?load=effects"></script>
+<script type="text/javascript">
+var NYTD = NYTD || {};
+NYTD.NYTINT = NYTD.NYTINT || {};
+NYTD.NYTINT.Share = NYTD.NYTINT.Share || {};
+NYTD.NYTINT.Hover = NYTD.NYTINT.Hover || {};
+NYTD.NYTINT.SwitchTabs = NYTD.NYTINT.SwitchTabs || {};
+NYTD.NYTINT.pageConfig = { description: "Represent lets New York City readers find out who represents them in local, state and federal offices and assembles a personalized activity feed of what their elected officials are doing." };
+</script>
+
+<script src="http://graphics8.nytimes.com/packages/js/nytint/projects/represent/represent.js"></script>
+<script type="text/javascript">
+try{var xx = new NYTD.NYTINT.Tabs('nytint-tabs');}catch(e){alert(e);}
+NYTD.NYTINT.Hover.init();
+NYTD.NYTINT.location = '{{ location }}';
+</script>
+<script src="http://graphics8.nytimes.com/packages/js/nytint/projects/represent/represent_mod.js"></script>
+
+{% if API_KEY %}
+<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key={{ API_KEY }}" type="text/javascript"></script>
+<script type="text/javascript">
+// load maps
+var map;
+var gmap_load = function(overlaySrc,districtId,centerX,centerY){
+	if (GBrowserIsCompatible()) { 
+		var geoXml;
+		var geoCallback = function() {
+			geoXml.gotoDefaultViewport(map);
+		}
+		geoXml = new GGeoXml(overlaySrc, geoCallback);
+		var map = new GMap2(document.getElementById("nytint-map-"+districtId));
+		map.setCenter(new GLatLng(centerY, centerX), 12);
+		map.addMapType(G_PHYSICAL_MAP);
+		map.setMapType(G_PHYSICAL_MAP);
+		map.disableDoubleClickZoom();
+		map.disableInfoWindow();
+		map.addOverlay(geoXml);
+	
+		var icon = new GIcon( );
+		icon.image = "http://www.nytimes.com/packages/html/maps/landlords/markerOrange.png";
+		icon.iconSize = new GSize( 14, 14 );
+		icon.iconAnchor = new GPoint( 7,7);
+		icon.infoWindowAnchor = new GPoint( 7, 7 );
+		var pnt = new GLatLng({{ best.y }}, {{ best.x }});
+		var opts = { icon:icon };
+		var marker = new GMarker(pnt, opts);
+		map.addOverlay(marker);
+		map.disableDragging();
+  	}
+};
+{% for district in map_districts %}
+gmap_load('http://graphics8.nytimes.com/packages/xml/represent/{{ district.id }}.xml','{{ district.id }}',{{ district.poly.centroid.y}},{{ district.poly.centroid.x}});
+{% endfor %}
+</script>
+{% endif %}
+{% endblock scriptbottom %}

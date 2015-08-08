@@ -1,0 +1,26 @@
+{% load humanize %}<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:rep="http://prototype.nytimes.com/represent/ns">
+  <title>EveryBlock Represent updates</title>
+  <id href="http://prototype.nytimes.com/represent/everyblock/updates?since=1231890769"/>
+  <updated>{{ now|rfc3999}}</updated>
+  <author>
+    <name>The New York Times</name>
+  </author>
+{% for event in events %}{% for official in event.my_officials %}  <entry>
+    <title>{{ event.link_title }}</title>
+    <rep:district>
+      <rep:type>{{ official.office.name }}</rep:type>
+      <rep:number>{{ official.office.district }}</rep:number>
+    </rep:district>
+    <rep:representative>
+      <rep:title>{{ official.get_gender_title }}</rep:title>
+      <rep:name>{{ official.display_name }}</rep:name>
+    </rep:representative>
+    <link href="{{ event.url }}"/>
+    <id>{{ official.office.name }}, {{ official.display_name }}, {{ event.url }}</id>
+    <updated>{{ event.created|rfc3999 }}</updated>
+    <content type="text/html">
+      {{ official.get_gender_title }} {{ official.display_name }} {{ event.text }}
+    </content>
+  </entry>
+{% endfor %}{% endfor %}</feed>
